@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Sprint extends BaseTest {
@@ -15,6 +16,7 @@ public class Sprint extends BaseTest {
         Actions act = new Actions(driver);
         WebElement textBox = driver.findElement(By.id("target"));
         act.keyDown(Keys.SHIFT).sendKeys(textBox,"vani").keyUp(Keys.SHIFT).sendKeys("vani").build().perform();
-
+        WebElement result = driver.findElement(By.id("result"));
+        Assert.assertTrue(result.isDisplayed());
     }
 }
