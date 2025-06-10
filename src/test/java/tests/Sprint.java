@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class Sprint extends BaseTest {
 
     @Test
-    public void sprint() {
+    public void sprint() throws InterruptedException {
         driver.findElement(By.xpath("//a[text()='Key Presses']")).click();
         Actions act = new Actions(driver);
         WebElement textBox = driver.findElement(By.id("target"));
