@@ -11,13 +11,12 @@ import org.testng.annotations.Test;
 public class Sprint extends BaseTest {
 
     @Test
-    public void sprint() throws InterruptedException {
+    public void sprint() {
         driver.findElement(By.xpath("//a[text()='Key Presses']")).click();
         Actions act = new Actions(driver);
         WebElement textBox = driver.findElement(By.id("target"));
         act.keyDown(Keys.SHIFT).sendKeys(textBox,"vani").keyUp(Keys.SHIFT).sendKeys("vani").build().perform();
         WebElement result = driver.findElement(By.id("result"));
         Assert.assertTrue(result.isDisplayed());
-        System.out.println(result.getText());
     }
 }
